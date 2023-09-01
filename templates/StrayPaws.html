@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html style="overflow-x: hidden;" lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="description" content="Stray Paws: Stray Paws Rescue is a 501c3 nonprofit, foster based rescue in St. Louis Metro Area">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="author" content="Stray Paws Rescue">
+      <meta property="og:url" content="https://straypaws.pythonanywhere.com/">
+      <meta property="og:website" content="https://straypaws.pythonanywhere.com/">
+      <meta property="og:title" content="Stray Paws Rescue">
+      <meta property="og:description" content="Stray Paws: Stray Paws Rescue is a 501c3 nonprofit, foster based rescue in St. Louis Metro">
+      <meta property="og:image" content="/images/blue-pawprint.png">
+      <title>{% block title %} {% endblock %} - Stray Paws Rescue</title>
+      <link rel="stylesheet" href="/static/css/StrayPaws.css">
+      <link rel="icon" type="image/x-icon" href="/images/blue-pawprint.png">
+      <link rel="apple-touch-icon" href="/images/blue-pawprint.png">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500&display=swap" rel="stylesheet">
+      <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+      <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+      <script>
+         toggle = false
+         function showHamburgerMenu() {
+           if (toggle) {
+             document.getElementById("expanded_mobile_nav").style.display = "none";
+             toggle = false;
+           } else {
+             document.getElementById("expanded_mobile_nav").style.display = "block";
+             toggle = true;
+           }
+         }
+      </script>
+   </head>
+   <body>
+      <header>
+         <a title="Stray Paws Rescue: Home page" href="{{url_for('home')}}"><img class="logo" alt="Stray Paws Logo" src="/images/logo-transparent.png"></a>
+         <h1>Stray Paws Rescue</h1>
+         <!-- <span>"Rescue motto or quote will go here"</span> --><br>
+         <a href="https://www.facebook.com/straypawsadoptables" title="Facebook" ><img class="social_media" alt="Facebook link: Stray Paws" src="/images/facebook.png"></a>
+         <a href="https://www.instagram.com/straypawsrescuestlouis/" title="Instagram"><img class="social_media" alt="Instagram link: Stray Paws" src="/images/instagram.png"></a>
+         <a href="https://www.tiktok.com/@straypawsrescue" title="Tiktok"><img class="social_media" alt="Tiktok link: Stray Paws" src="/images/tiktok.png"></a>
+         <a href={{url_for('donate')}} title="Donations"><img alt="donations" class="donation" src="/images/donations.png"></a>
+      </header>
+      <div class="divider">
+         <nav class="main_nav">
+            <a href={{url_for('home')}}>
+            <img alt="Stray Paws: Home" class="navbar_img" src="/images/home.png">
+            Home</a>
+            <div class="dropdown">
+               <button class="dropbtn">
+               <img alt="Stray Paws: Contact Information" class="navbar_img" src="/images/contact.png">
+               Our Rescue
+               </button>
+               <div class="dropdown-content">
+                  <a href={{url_for('about')}}>About Us</a>
+                  <a href={{url_for('contact')}}>Contact Us</a>
+                  <a href={{url_for('store')}}>Store</a>
+               </div>
+            </div>
+            <div class="dropdown">
+               <button class="dropbtn">
+               <img alt="Stray Paws:Information" class="navbar_img" src="/images/info.png">
+               Information
+               </button>
+               <div class="dropdown-content">
+                  <a href={{url_for('events')}}>News and Events</a>
+                  <a href={{url_for('adoption')}}>Adoption Info</a>
+                  <a href={{url_for('sponsorship')}}>Sponsorship Info</a>
+                  <a href={{url_for('donate')}}>Donations</a>
+                  <a href={{url_for('forms')}}>Forms</a>
+               </div>
+            </div>
+            <div class="dropdown">
+               <button class="dropbtn">
+               <img alt="Stray Paws: Animals" class="navbar_img" src="/images/white-pawprint-2.png">
+               Animals
+               </button>
+               <div class="dropdown-content">
+                  <a href={{url_for('animals')}}>Featured Animals</a>
+                  <a href={{url_for('doglist')}}>Adoptable Dogs</a>
+                  <a href={{url_for('catlist')}}>Adoptable Cats</a>
+                  <a href={{url_for('fosters')}}>Fosters Needed</a>
+                  <a href={{url_for('gallery')}}>Photo Gallery</a>
+               </div>
+            </div>
+         </nav>
+      </div>
+      <div id="expanded_mobile_nav">
+         <img class="mobile_nav_icon" alt="home" src="/images/home-blue.png">
+         <a href={{url_for('home')}}>Home</a>
+         <img class="mobile_nav_icon" alt="about" src="/images/info-blue.png">
+         <a href={{url_for('about')}}>About Us</a>
+         <img class="mobile_nav_icon" alt="Contact us" src="/images/contact-blue.png">
+         <a href={{url_for('contact')}}>Contact Us</a>
+         <img class="mobile_nav_icon" alt="Store" src="/images/store-blue.png">
+         <a href={{url_for('store')}}>Store</a>
+         <img class="mobile_nav_icon" alt="News and events" src="/images/cal.png">
+         <a href={{url_for('events')}}>News and Events</a>
+         <img class="mobile_nav_icon" alt="Adoption Information" src="/images/adopt.png">
+         <a href={{url_for('adoption')}}>Adoption Info</a>
+         <img class="mobile_nav_icon" alt="Sponsorship" src="/images/sponsor.png">
+         <a href={{url_for('sponsorship')}}>Sponsorship Info</a>
+         <img class="mobile_nav_icon" alt="donations" src="/images/donate-blue.png">
+         <a href={{url_for('donate')}}>Donations</a>
+         <img class="mobile_nav_icon" alt="Forms" src="/images/forms.png">
+         <a href={{url_for('forms')}}>Forms</a>
+         <img class="mobile_nav_icon" alt="Featured Animals" src="/images/blue-pawprint.png">
+         <a href={{url_for('animals')}}>Featured Animals</a>
+         <img class="mobile_nav_icon" alt="Adoptable Dogs" src="/images/dogicon.png">
+         <a href={{url_for('doglist')}}>Adoptable Dogs</a>
+         <img class="mobile_nav_icon" alt="Adoptable Cats" src="/images/caticon.png">
+         <a href={{url_for('catlist')}}>Adoptable Cats</a>
+         <img class="mobile_nav_icon" alt="Fosters" src="/images/blue-pawprint.png">
+         <a href={{url_for('fosters')}}>Fosters</a>
+         <img class="mobile_nav_icon" alt="Photo Gallery" src="/images/gallery.png">
+         <a href={{url_for('gallery')}}>Photo Gallery</a>
+      </div>
+      {% block content %} {% endblock %}
+      <footer>
+         <div class="mobile_nav" id="hamburger-icon" onclick="showHamburgerMenu()">
+            <img alt="Stray Paws: Navigation Menu" class="nav_img" src="/images/hamburger.png">
+         </div>
+         <div class="mobile_nav">
+            <a href={{url_for('home')}}>
+            <img alt="Stray Paws: Home" class="nav_img" src="/images/home.png">
+            </a>
+         </div>
+         <div class="mobile_nav">
+            <a href={{url_for('about')}}>
+            <img alt="Stray Paws:Information" class="nav_img" src="/images/info.png">
+            </a>
+         </div>
+         <div class="mobile_nav">
+            <a href={{url_for('contact')}}>
+            <img alt="Stray Paws: Contact Information" class="nav_img" src="/images/contact.png">
+            </a>
+         </div>
+         <div class="mobile_nav">
+            <a href={{url_for('animals')}}>
+            <img alt="Stray Paws: Animals" class="nav_img" src="/images/white-pawprint-2.png">
+            </a>
+         </div>
+         <div class="mobile_nav">
+            <a href={{url_for('store')}}>
+            <img alt="Stray Paws: Shop" class="nav_img" src="/images/store.png">
+            </a>
+         </div>
+         <div class="mobile_nav">
+            <a href={{url_for('donate')}}>
+            <img alt="Stray Paws: Donations" class="nav_img" src="/images/donate.png">
+            </a>
+         </div>
+      </footer>
+   </body>
+</html>
