@@ -1,0 +1,35 @@
+{% extends 'StrayPaws.html' %}
+{% block title %} About {% endblock %}
+{% block content %}
+
+<main>
+   <div class="about">
+      <h2>Welcome to Stray Paws Rescue</h2>
+      <p>Disclaimer – Stray Paws Rescue is a 501c3 nonprofit, foster based rescue. Our organization believes it is our moral responsibility to protect and improve the lives of rescued animals and place them in loving permanent homes in St. Louis Metro Area. Donations are tax deductible as allowed by law. Stray Paws Rescue Official mailing addresses for mailing any monetary donations are (1) Stray Paws Rescue 330 Depot Street, St. Peters, MO 63376 or (2) Stray Paws Rescue 7055 Mexico Road, Box 1663 St. Peters, MO 63376. Please do not mail donations to any other location/addresses; as we will not be able to confirm receipt of the donation.</p>
+   </div>
+   <br><br>
+   <div class="adoption_stats_grid">
+      <div class="span_one">
+         <img class="adoption_stats_img" src="https://media.discordapp.net/attachments/746552826070564865/1112164643339771934/Sage_Green_Organic_Pet_Adoption_Pinterest_Pin_1.png?width=703&height=703">
+      </div>
+      <div class="span_one">
+         <br><br>
+         <h3>This year</h3>
+         {{ (188-14) + this_year['dog_intake'] }} dogs taken in<br>
+         {{ (31-4) + this_year['cat_intake'] }} cats taken in<br><br>
+         <span> {{ 255 + this_year['total_adopted'] }} </span><br>animals <b>adopted</b> so far!
+      </div>
+      <div>
+         <img class="adoption_stats_img" src="https://media.discordapp.net/attachments/746552826070564865/1112165461497483264/Sage_Green_Organic_Pet_Adoption_Pinterest_Pin_2.png?width=703&height=703">
+      </div>
+      <div class="span_one">
+         <br><br>
+         <h3>Last year</h3>
+         710 dogs taken in<br>
+         116 cats taken in<br><br>
+         <span> 964 </span><br>animals <b>adopted</b> last year!
+      </div>
+   </div>
+</main>
+
+{% endblock %}
