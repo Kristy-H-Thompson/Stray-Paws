@@ -1,0 +1,40 @@
+{% extends 'StrayPaws.html' %}
+{% block title %} Adoptable Cats {% endblock %}
+{% block content %}
+<main>
+   <div class="about">
+      <h2>Adoptable Cats</h2>
+      <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+      <img class="pawprint" alt="paw print" src="/images/blue-pawprint.png">
+      <a href="{{url_for('adoption')}}">
+      Learn more about how to adopt from Stray Paws Rescue
+      </a>
+   </div>
+   <div class="featured_animals">
+      <div class="animal_list_grid">
+         {% for cat in cats %}
+         <div class="animal">
+            <img alt="animal image" class="featured_img" src={{ cat['CoverPhoto'] }}>
+            <img class="pawprint" alt="paw print" src="/images/blue-pawprint.png">
+            <a href="{{url_for('information', animal_id=cat['Internal-ID'])}}">
+            Get more information
+            </a>
+         </div>
+         <div class="animal_list_info">
+            <h3>{{ cat['Name'] }}</h3>
+            <div>Breed information will go here</div>
+            <br><br>
+            <div class="list_info"><b>Age:</b> {{ cat['Age'] }} years? </div>
+            <div class="list_info"><b>Sex:</b> {{ cat['Sex'] }} </div>
+            <div><b>Status:</b> {{ cat['Status'] }}</div>
+            <div class="list-description">
+               <p>{{ cat['Description'] }} </p>
+            </div>
+         </div>
+         {% endfor %}
+      </div>
+   </div>
+   </div>
+   </div>
+</main>
+{% endblock %}
