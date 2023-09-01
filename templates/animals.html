@@ -1,0 +1,60 @@
+{% extends 'StrayPaws.html' %}
+{% block title %} Adoptable Animals {% endblock %}
+{% block content %}
+<main>
+   <div class="featured_animals" style="  -webkit-box-sizing: border-box;
+      box-sizing: border-box;">
+   <h3>Search</h3>
+   <form class="animal-search" method="POST" name="animal-search">
+      <input type="text" name="search" placeholder="Search..">
+      <button type="submit"><img class="animal-search_icon" src="https://media.discordapp.net/attachments/746552826070564865/1119073189633458256/Untitled_design_70.png?width=124&height=124"></button>
+      <br><br>
+      <div class="flex">
+         <div>
+            <input type="checkbox" id="good-with-cats" name="good-with-cats" value="good-with-cats">
+            <label for="good-with-cats">Good with cats </label>
+         </div>
+         <div>
+            <input type="checkbox" id="good-with-dogs" name="good-with-dogs" value="good-with-dogs">
+            <label for="good-with-dogs">Good with dogs </label>
+         </div>
+         <div>
+            <input type="checkbox" id="good-with-kids" name="good-with-kids" value="good-with-kids">
+            <label for="good-with-kids">Good with kids </label>
+         </div>
+      </div>
+   </form>
+   <br>
+   <h3>Featured Dogs</h3>
+   <img class="pawprint" alt="paw print" src="/images/blue-pawprint.png">
+   <a href={{url_for('doglist')}}> View All Dogs</a><br><br>
+   <div class="gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>
+      {% for dog in dogs %}
+      <div class="gallery-cell">
+         <h2>{{ dog['name'] }} </h2>
+         <img alt="aniaml image" class="slider_img" src="{{ dog['coverphoto'] }}">
+         <p class="list-description">{{ dog['description'] }}</p>
+         <br><img class="pawprint" alt="paw print" src="/images/blue-pawprint.png">
+         <a href="{{url_for('information', animal_id=dog['id'])}}"> Learn more</a>
+      </div>
+      {% endfor %}
+   </div>
+   <br><br>
+   <div class="featured_animals">
+      <h2>Featured Cats</h2>
+      <img class="pawprint" alt="paw print" src="/images/blue-pawprint.png">
+      <a href={{url_for('catlist')}}> View All Cats</a><br><br>
+      <div class="gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>
+         {% for cat in cats %}
+         <div class="gallery-cell">
+            <h3>{{ cat['name'] }} </h3>
+            <img alt="animal image" class="slider_img" src="{{ cat['coverphoto'] }}">
+            <p class="list-description">{{ cat['description'] }}</p>
+            <br><img class="pawprint" alt="paw print" src="/images/blue-pawprint.png">
+            <a href="{{url_for('information', animal_id=cat['id'])}}"> Learn more</a>
+         </div>
+         {% endfor %}
+      </div>
+   </div>
+</main>
+{% endblock %}
