@@ -1,0 +1,913 @@
+ html{
+     box-sizing: border-box;
+     width: 100%;
+     margin: 0;
+     overflow:auto;
+     overflow-x: hidden;
+     padding: 0;
+     position:absolute;
+     border: 0;
+}
+ body {
+    /* Site Colors */
+     --light_background: #F0F1F1;
+     --blue_accent: #108FD8;
+     --text_color: #070707;
+     --img_border:#061924;
+     --button_hover:#57C2FF;
+     box-sizing: border-box;
+     font-family:'Laila', sans-serif;
+     color: var(--text_color);
+     overflow-x: hidden;
+     overflow-y: hidden;
+     width: 100%;
+     margin: 0;
+     padding: 0;
+     border: 0;
+}
+/* Font Styles */
+ h1 {
+     font-size: 400%;
+     margin:0px;
+}
+ h2 {
+     font-size: 250%;
+     margin:0px 
+}
+ h3 {
+     font-size:190%;
+     margin:0px;
+}
+ p {
+     font-size:100%;
+     margin:.2rem;
+}
+ a {
+     color:var(--blue_accent);
+}
+ a:hover {
+     color:var(--button_hover);
+}
+/* Heading Styles */
+ header {
+     background-color:var(--light_background);
+     height:16rem;
+     margin:0px;
+     min-width:100%;
+     padding:1rem;
+     text-align:center;
+     width:100%;
+}
+ header span{
+     font-size:180%;
+     margin:0px;
+}
+ .logo {
+     display:inline;
+     float:left;
+     height:15rem;
+     width:15rem;
+}
+ .donation {
+     height:4.3rem;
+     margin-top:.3rem;
+}
+ .donation:hover {
+     mix-blend-mode: color-burn;
+}
+ .social_media {
+     height:4rem;
+     width:4rem;
+}
+ .social_media:hover {
+     mix-blend-mode: color-burn;
+}
+ .animal_deatils .social_media:hover {
+     mix-blend-mode: color-burn;
+}
+ .navbar_img {
+     aspect-ratio: 1 / 1;
+     display:inline;
+     float:left;
+     margin-right:.3rem;
+     width:30px;
+}
+/* Desktop Navigation bar*/
+ .divider {
+     background-color: var(--blue_accent);
+     color: var(--light_background);
+     font-family:'Laila', sans-serif;
+     font-size:130%;
+     font-weight:500;
+     height: 4rem;
+     overflow:hidden;
+     padding:.5rem;
+     width:100%;
+}
+ .divider.fixed-top {
+     position: fixed;
+     top: 0;
+}
+/* Links inside the navbar */
+ .divider a {
+     float: left;
+     color: white;
+     text-align: center;
+     padding: 1rem 1.2rem;
+     text-decoration: none;
+}
+ .dropdown {
+     float: left;
+     overflow: hidden;
+}
+/* Dropdown button */
+ .dropdown .dropbtn {
+     border: none;
+     font-size:105%;
+     font-weight:420;
+     outline: none;
+     color: white;
+     padding: 1rem 1.2rem;
+     background-color: inherit;
+     font-family:'Laila', sans-serif;
+    /* Important for vertical align on mobile phones */
+     margin: 0;
+    /* Important for vertical align on mobile phones */
+}
+ .main_nav a:hover, .dropdown:hover .dropbtn {
+     background-color: var(--button_hover);
+     border-radius:5%;
+}
+/* Dropdown content (hidden by default) */
+ .dropdown-content {
+     display: none;
+     position: absolute;
+     background-color: #f9f9f9;
+     min-width: 160px;
+     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+     z-index: 1;
+}
+/* Links inside the dropdown */
+ .dropdown-content a {
+     float: none;
+     color: black;
+     padding: 12px 16px;
+     text-decoration: none;
+     display: block;
+     text-align: left;
+}
+/* Add a grey background color to dropdown links on hover */
+ .dropdown-content a:hover {
+     background-color: #ddd;
+}
+/* Show the dropdown menu on hover */
+ .dropdown:hover .dropdown-content {
+     display: block;
+}
+/* Main Styles*/
+ main {
+     justify-content:center;
+     padding:2rem;
+     margin:0px;
+     margin-bottom:8rem;
+     width:100%;
+}
+ .about {
+     margin:0px;
+     margin-top:1rem;
+     margin-right:4rem;
+     text-align:left;
+}
+ .pawprint{
+     display:inline;
+     height:2rem;
+     margin:0px;
+     margin-right:.2rem;
+     margin-bottom:-.5rem;
+     width:2rem;
+}
+ .adoption_stats_grid{
+     display:grid;
+     width:80%;
+     grid-template-columns: 30% 55%;
+     gap:1rem;
+     row-gap:3rem;
+}
+ .span_one{
+     grid-column: span 1;
+     text-align:center;
+}
+ .span_one span{
+     font-size:200%;
+     color:var(--blue_accent);
+     font-weight: bolder;
+}
+ .adoption_stats_img{
+     float:left;
+     width:100%;
+     aspect-ratio: 1/1;
+}
+ .featured_grid {
+     display:grid;
+     gap:2rem;
+     grid-template-columns: auto auto auto auto auto;
+     justify-content: space-evenly;
+     width:90%;
+}
+ .animal_picture_grid {
+     display:grid;
+     gap:2rem;
+     grid-template-columns: auto auto auto auto auto;
+     justify-content: space-evenly;
+     width:90%;
+}
+ .animal_description{
+     width:80%;
+}
+ .featured_animals {
+     margin-top:5rem;
+}
+ .featured_animal {
+     grid-column: span 1;
+     text-align:center;
+}
+ .featured_img{
+     border:10px solid var(--img_border);
+     height:350px;
+     aspect-ratio: 1 / 1;
+}
+ .banner {
+     width:25%;
+     display:block;
+     position:relative;
+     margin-left:auto;
+     margin-right:auto;
+     margin-bottom:2rem;
+}
+/* Footer Styles */
+ .forms_grid {
+     display:grid;
+     gap:1rem;
+     grid-template-columns: auto auto auto auto;
+     justify-content: space-evenly;
+     width:95%;
+}
+ .forms_box{
+     background-color:var(--blue_accent);
+     border:none;
+     border-radius:10px;
+     color:white;
+     cursor: pointer;
+     font-size:100%;
+     padding:.4rem;
+     width:100%;
+}
+ .forms_box:hover{
+     background-color:rgb(16, 230, 238);
+}
+ .forms_box a{
+     color:white;
+     text-decoration:none;
+     background-color:var(--blue_accent);
+     border-radius:10px;
+     color:white;
+     padding:.2rem;
+     width:100%;
+}
+ .form_img {
+     display: inline;
+     float:left;
+     height:2.5rem;
+     margin-right:1rem;
+     width:2.5rem;
+}
+/* Footer Styles */
+ footer {
+     background-color: var(--blue_accent);
+     bottom:0;
+     display:grid;
+     gap:.3rem;
+     grid-template-columns: auto auto auto auto auto auto auto;
+     height:2.5rem;
+     justify-content: space-evenly;
+     margin:0px;
+     padding:.5rem;
+     width:100%;
+}
+ .mobile_nav {
+     display:none;
+     margin-bottom:3rem;
+}
+ .mobile_nav :hover{
+     background-color:var(--button_hover);
+     border-radius:5px;
+}
+ .nav_img{
+     aspect-ratio: 1 / 1;
+     width:80%;
+}
+ .mobile_nav_icon{
+     aspect-ratio: 1 / 1;
+     float:left;
+     height:2rem;
+     margin-right:1rem;
+     width:2rem;
+}
+ .paw_img {
+     width:75% 
+}
+/* Contact Styles */
+ .contact_outer{
+     display:block;
+}
+ .contact_outer span{
+     color:#DD2E44;
+     font-weight:bold;
+}
+ .emergency {
+     padding-right:20%;
+}
+ .contact_pawprint{
+     display:inline;
+     float:left;
+     margin:0px;
+     margin-right:.2rem;
+     width:4rem;
+}
+ .contact_container{
+     display:inline;
+     margin-left:2rem;
+     margin-right:3rem;
+     width:75%;
+}
+ .mobile_pawprint_link :hover{
+     background-color:var(--button_hover);
+}
+ .adoption_information {
+     margin-left:2rem;
+     margin-right:3rem;
+     width:75%;
+}
+ .adoption_information2 {
+     margin-left:2rem;
+     margin-right:3rem;
+     width:75%;
+}
+ .adoption_graphic {
+     display:none;
+     width:75%;
+}
+/* Animal List Styles */
+ .animal_list_grid {
+     display:grid;
+     gap:2rem;
+     grid-template-columns: 30% 58%;
+     justify-content: space-evenly;
+     width:85%;
+}
+ .animal {
+     margin-bottom:5rem;
+}
+ .animal_list_info {
+     text-align:left;
+}
+ .list_info {
+     display:inline;
+}
+ .list-description{
+     height:auto;
+     max-height:8rem;
+     text-overflow: ellipsis;
+     overflow:hidden;
+     width:95%;
+}
+ .loadmore {
+     background-color:var(--blue_accent);
+     color:white;
+     border-radius:20px;
+     display:block;
+     font-size:120%;
+     font-weight:300;
+     height:60px;
+     margin-left:auto;
+     margin-right:auto;
+     width:300px;
+}
+ .pawprint_loadmore {
+     display:inline;
+     height:2rem;
+     margin-bottom:-.5rem;
+     width:2rem;
+}
+ .description{
+     display:block;
+}
+ .animal{
+     margin-bottom:4rem;
+}
+/* Animal Information Styles*/
+ .animal_info_grid {
+     display:grid;
+     gap:2rem;
+     grid-template-columns: 34% 58%;
+     justify-content: space-evenly;
+     width:85%;
+}
+ .animal_details_grid {
+     display:grid;
+     gap:2rem;
+     grid-template-columns: auto auto auto auto;
+     justify-content: space-around;
+     width:95%;
+     margin:0px;
+}
+ .pawprint_detail{
+     display:inline;
+     height:3rem;
+     margin:0px;
+     margin-right:.5rem;
+     margin-bottom:-1.5rem;
+     width:3rem;
+}
+ .animal_details_grid span{
+     margin-left:3.7rem;
+     height:3rem;
+}
+ .animal_details{
+     margin-top:2rem;
+}
+ .animal_details span{
+     margin-left:3.7rem;
+     height:3rem;
+}
+ .animal_flex {
+     display:flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     gap:3rem;
+     justify-content: space-around;
+     width:85%;
+}
+ .animal_flex_box{
+     flex-basis: auto;
+}
+/* Gallery Styles*/
+ .gallery {
+     width:85%;
+     margin-left:auto;
+     margin-right:auto;
+}
+ .gallery-cell {
+     background-color:#f0faff;
+     width: 48%;
+     padding:2rem;
+     margin-right: 10px;
+     justify-content:center;
+     text-align:center;
+     counter-increment: gallery-cell;
+}
+ .slider_img{
+     border:10px solid var(--img_border);
+     width:65%;
+     aspect-ratio: 1 / 1;
+}
+ .list-description{
+     height:auto;
+     max-height:4.5rem;
+     overflow: hidden;
+     white-space: nowrap;
+     text-overflow: ellipsis;
+     width:95%;
+}
+ element.style {
+}
+ .flickity-prev-next-button.previous {
+     left: 10px;
+}
+ .flickity-viewport{
+     width:100%;
+}
+ .flickity-prev-next-button {
+     top: 50%;
+     width: 44px;
+     height: 44px;
+     border-radius: 50%;
+     transform: translateY(-50%);
+}
+ .view-container-border{
+     width:85%;
+}
+/* Photo Gallery Page Styles */
+ .photos_in_gallery {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     width:85%;
+}
+ .photo_grid-container {
+     columns: 5 200px;
+     column-gap: 1.5rem;
+     width: 90%;
+     margin: 0 auto;
+}
+ .this_image {
+     width: 100%;
+     border-radius: 5px;
+     transition: all .25s ease-in-out;
+     object-fit: cover;
+     object-position: bottom left;
+}
+ .this_div {
+     background-color: var(--light_background);
+     margin: 0 1.5rem 3rem 0;
+     //height:auto;
+     width: 100%;
+     border: solid 4px black;
+     padding: 5px;
+     box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+     border-radius: 5px;
+     transition: all .25s ease-in-out;
+}
+ .this_div:hover {
+     border: solid 7px var(--blue_accent);
+     margin:1rem;
+     position:relative;
+     width:120%;
+     z-index:2;
+}
+ .animal-search input[type=text] {
+     display:block;
+     float: left;
+     padding: 6px;
+     border: 1.5px solid gray;
+     font-size: 17px;
+     width:75%;
+}
+ .animal-search_icon{
+     aspect-ratio: 1/1;
+     height:50px;
+     margin-top:-10px;
+     margin-left:5px;
+}
+ .animal-search_icon:hover{
+     background-color:var(--blue_accent);
+     border-radius:100%;
+}
+ .animal-search input[type=checkbox]{
+     display:inline;
+}
+ .animal-search label{
+     display:inline;
+}
+ .flex {
+     display:flex;
+     flex-flow: row wrap;
+     gap:1rem;
+     justify-content: flex-start;
+}
+ .animal-search{
+     margin-bottom:4rem;
+     width:85%;
+}
+ .animal-search button{
+     background-color:transparent;
+     border:none;
+     height:50px;
+}
+/* Mobile hamburger menu styles */
+ #expanded_mobile_nav {
+     display: none;
+     position: fixed;
+     top: 0;
+     height: 100%;
+     background-color: var(--light_background);
+     transition: width 2s, height 1.5s;
+     width:100vw;
+     min-width:100%;
+     margin: 0;
+     margin-bottom:2rem;
+     overflow:auto;
+     padding: 0;
+     border: 0;
+     z-index:2;
+}
+ #expanded_mobile_nav a {
+     display: block;
+     padding: 5px;
+     border: 1px dotted white;
+}
+ @media only screen and (max-width: 1700px) {
+     .featured_grid {
+         grid-template-columns: auto auto auto auto;
+    }
+     .banner {
+         width:65%;
+    }
+     .aniaml_picture_grid {
+         grid-template-columns: auto auto auto auto;
+    }
+}
+ @media only screen and (max-width: 1400px) {
+     .featured_grid {
+         grid-template-columns: auto auto auto;
+    }
+     .adoption_stats_grid{
+         display:grid;
+         width:100%;
+         grid-template-columns: 40% 45%;
+         gap:.5rem;
+         row-gap:3rem;
+    }
+     .adoption_stats_img{
+         margin-top:5rem;
+    }
+     .animal_picture_grid {
+         grid-template-columns: auto auto auto;
+    }
+     .animal_list_grid {
+         display:grid;
+         gap:2rem;
+         grid-template-columns: 40% 50%;
+         justify-content: space-evenly;
+         width:85%;
+    }
+     .animal_details_grid {
+         display:grid;
+         gap:2rem;
+         grid-template-columns: auto auto auto;
+         width:95%;
+    }
+     .featured_img{
+         height:310px;
+    }
+     .forms_grid {
+         grid-template-columns: auto auto auto;
+    }
+}
+ .page-link {
+     display:inline;
+}
+ .pagination li {
+     display:inline;
+     font-weight:550;
+     list-style:none;
+     margin:.5rem;
+     margin-left:0px;
+}
+ .pagination-page-info {
+     margin-left:3rem;
+}
+ @media only screen and (max-width: 1000px) {
+     .main_nav {
+         display:none;
+    }
+     .divider{
+         background-color: var(--blue_accent);
+         height:2rem;
+    }
+     footer {
+         margin-top:15rem;
+         position:fixed;
+         z-index:3;
+    }
+     .banner {
+         width:75%;
+    }
+     .mobile_nav{
+         display:block;
+    }
+     .mobile_pawprint_link {
+         display:block;
+    }
+     .featured_img{
+         height:300px;
+    }
+     .animal_info_grid {
+         grid-template-columns: 38% 50%;
+         width:90%;
+    }
+     .description{
+         display:none;
+    }
+     .adoption_information2 {
+         display:none;
+    }
+     .adoption_graphic{
+         display:block;
+    }
+     .forms_grid {
+         grid-template-columns: auto auto auto;
+    }
+}
+ @media only screen and (max-width: 850px) {
+     header{
+         height:10rem;
+    }
+     h1{
+         font-size:250%;
+    }
+     .banner {
+         width:85%;
+    }
+     h2{
+         font-size:180%;
+    }
+     h3{
+         font-size:120%;
+    }
+     p{
+         font-size:90%;
+    }
+     header span{
+         font-size:130%;
+    }
+     .logo {
+         height:9rem;
+         width:9rem;
+    }
+     .social_media{
+         height:3rem;
+         width:3rem;
+    }
+     .social_media:hover {
+         mix-blend-mode: color-burn;
+    }
+     .donation {
+         height:3rem;
+    }
+     .featured_grid {
+         grid-template-columns: auto auto;
+    }
+     .animal_picture_grid {
+         grid-template-columns: auto auto;
+    }
+     .mobile_pawprint_link{
+         height:100%;
+         width:100%;
+    }
+     .featured_img{
+         aspect-ratio: 1 / 1;
+         height:250px;
+    }
+     .animal_details_grid {
+         grid-template-columns: auto auto;
+    }
+     .animal_list_grid {
+         display:grid;
+         gap:2rem;
+         grid-template-columns: 50% 45%;
+         justify-content: space-evenly;
+         width:85%;
+    }
+     header span{
+         display:none;
+    }
+     .description{
+         display:none;
+    }
+     ul {
+         display: block;
+         list-style-type: disc;
+         margin-block-start: 1em;
+         margin-block-end: 1em;
+         margin-inline-start: 0px;
+         margin-inline-end: 0px;
+         padding-inline-start: 40px;
+    }
+     .ul {
+         display: block;
+         list-style-type: disc;
+         margin-block-start: 1em;
+         margin-block-end: 1em;
+         margin-inline-start: 0px;
+         margin-inline-end: 0px;
+         padding-inline-start: 40px;
+    }
+     .forms_grid {
+         grid-template-columns: auto auto ;
+    }
+}
+ @media only screen and (max-width: 780px) {
+     h1{
+         font-size:200%;
+    }
+     .banner {
+         width:90%;
+    }
+     .social_media{
+         height:2.5rem;
+         width:2.5rem;
+    }
+     .social_media:hover {
+         mix-blend-mode: color-burn;
+    }
+     .logo{
+         height:9rem;
+         width:9rem;
+    }
+     .description{
+         display:none;
+    }
+     .pagination {
+         display:block;
+    }
+     .gallery {
+         margin-left:0;
+    }
+     .forms_grid {
+         grid-template-columns: auto;
+    }
+     @media only screen and (max-width: 550px) {
+         header{
+             height:12rem;
+             padding:.3rem;
+        }
+         h1{
+             font-size:175%;
+        }
+         .featured_grid {
+             grid-template-columns: auto;
+        }
+         .animal_picture_grid {
+             grid-template-columns: auto;
+        }
+         .animal_list_grid {
+             display:grid;
+             gap:2rem;
+             grid-template-columns: auto auto;
+             width:85%;
+        }
+         .logo{
+             height:7.5rem;
+             width:7.5rem;
+        }
+         .animal {
+             margin-bottom:-2rem;
+        }
+         .donation{
+             height:2.5rem;
+        }
+         .featured_img{
+             aspect-ratio: 1 / 1;
+             max-width:100%;
+        }
+         .animal_info_grid {
+             grid-template-columns: 45% 50%;
+             width:90%;
+        }
+         .animal_details_grid {
+             width:95%;
+        }
+         .adoption_information {
+             width:75%;
+             padding:1rem;
+        }
+         .banner {
+             width:95%;
+        }
+         .pawprint_detail{
+             height:1.8rem;
+             width:1.8rem;
+        }
+         .animal_details_grid span {
+             margin-left: 2.4rem;
+        }
+         .description{
+             display:none;
+        }
+         .list_info{
+             display:block;
+        }
+         .animal{
+             margin-bottom:4rem;
+        }
+         .pawprint{
+             height:1rem;
+             width:1rem;
+        }
+         .forms_grid {
+             grid-template-columns: auto;
+        }
+    }
+     @media only screen and (max-width: 360px) {
+         h1{
+             font-size:150%;
+        }
+         .animal_details_grid span {
+             margin-left: 1rem;
+        }
+         .description{
+             display:none;
+        }
+         .list_info{
+             display:block;
+        }
+         .pawprint{
+             height:1.5rem;
+             width:1.5rem;
+             margin-bottom:none;
+        }
+    }
+     
