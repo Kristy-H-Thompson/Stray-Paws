@@ -1,0 +1,66 @@
+{% extends 'StrayPaws.html' %}
+{% block title %} {{ page_title }} {% endblock %}
+{% block content %}
+<main>
+   <div class="about">
+      <h2>{{ page_title }}</h2>
+   </div>
+   <br><br>
+   {{ pagination.links }}
+   {{ pagination.info }}
+   <div class="featured_animals">
+      <h3>Search</h3>
+      <form class="animal-search" method="POST" name="animal-search">
+         <input type="text" name="search" placeholder="Search..">
+         <button type="submit"><img class="animal-search_icon" src="https://media.discordapp.net/attachments/746552826070564865/1119073189633458256/Untitled_design_70.png?width=124&height=124"></button>
+         <br><br>
+         <div class="flex">
+            <div>
+               <input type="checkbox" id="good-with-cats" name="good-with-cats" value="good-with-cats">
+               <label for="good-with-cats">Good with cats </label>
+            </div>
+            <div>
+               <input type="checkbox" id="good-with-dogs" name="good-with-dogs" value="good-with-dogs">
+               <label for="good-with-dogs">Good with dogs </label>
+            </div>
+            <div>
+               <input type="checkbox" id="good-with-kids" name="good-with-kids" value="good-with-kids">
+               <label for="good-with-kids">Good with kids </label>
+            </div>
+         </div>
+      </form>
+      <br>
+      <div class="animal_list_grid">
+         {% for animal in animals %}
+         <!-- IF WE EVER WANT THE COUNT (ie this is dog result # {{ loop.index + pagination.skip }}) --->
+         <div class="animal">
+            <img alt="animal image" class="featured_img" src={{ animal['coverphoto'] }}>
+            <img class="pawprint" alt="paw print" src="/images/blue-pawprint.png">
+            <a title="sponsor this animal" href="{{ url_for('information', animal_id=animal['id'])}}">
+            Sponsor {{ animal['name'] }}
+            </a>
+         </div>
+         <div class="animal_list_info">
+            <h3>{{ animal['name'] }}</h3>
+            <div class="list_info"><b>Age:</b> {% if animal['age'] > 12 %} {{ (animal['age'] / 12)|round }} years
+               {% else %} {{ animal['age'] }} months {% endif %}
+            </div>
+            <div class="list_info"><b>Sex:</b> {{ animal['sex'] }} </div>
+            <div><b>Breed:</b> {{ animal['breed'] }}</div>
+            <div><b>Status:</b> {{ animal['status'] }}</div>
+            <br>
+            <div class="description">
+               <p>{{ animal['description'] }} </p>
+            </div>
+            <img class="pawprint" alt="paw print" src="/images/blue-pawprint.png">
+            <a title="learn more about this animal" href="{{ url_for('information', animal_id=animal['id'])}}">
+            More about {{ animal['name'] }}...
+            </a>
+         </div>
+         {% endfor %}
+      </div>
+   </div>
+   {{ pagination.links }}
+   {{ pagination.info }}
+</main>
+{% endblock %}
