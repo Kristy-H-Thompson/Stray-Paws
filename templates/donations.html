@@ -1,0 +1,14 @@
+{% extends 'StrayPaws.html' %}
+{% block title %} Donate {% endblock %}
+{% block content %}
+<main>
+   <div class="about">
+      <h2>Donations</h2>
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="display: inline;"><input style="display:inline;" name="cmd" type="hidden" value="_s-xclick"> <input name="hosted_button_id" type="hidden" value="74VTBQDSPDZ62"> <input style="display:inline;" class="donation" alt="Donate with PayPal button" name="submit" src="/images/paypal.png" title="PayPal - The safer, easier way to pay online!" type="image" border="0"></form>
+      <a  title="Cashapp" href="https://cash.app/$StrayPawsRescuestl"> <img alt="donation - cashapp" class="donation" src="/images/cashapp.png"></a>
+      <a  title="venmo" href="https://account.venmo.com/u/straypawsrescuestl"><img alt="donation" class="donation - venmo" src="/images/venmo.png"></a>
+      <a tite="Amazon wishlist" href="https://www.amazon.com/hz/wishlist/ls/1KMP35R8XLPEE?ref_=wl_share"> <img alt="donation - amazon wishlist" class="donation" src="/images/amazon-wishlist.png"></a>
+      <iframe width="100%" style="min-height:2600px;" src="https://checkout.shelterluv.com/donate/spra" title="Shelterluv Donation Widget"></iframe>
+   </div>
+</main>
+{% endblock %}
