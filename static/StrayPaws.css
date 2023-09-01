@@ -598,6 +598,55 @@
      padding: 5px;
      border: 1px dotted white;
 }
+
+
+.animal-search input[type=text] {
+  display:block;
+  float: left;
+  padding: 6px;
+  border: 1.5px solid gray;
+  font-size: 17px;
+  width:75%;
+}
+
+.animal-search_icon{
+    aspect-ratio: 1/1;
+    height:50px;
+    margin-top:-10px;
+    margin-left:5px;
+}
+
+.animal-search_icon:hover{
+    background-color:var(--blue_accent);
+    border-radius:100%;
+}
+
+
+.animal-search input[type=checkbox]{
+    display:inline;
+}
+
+.animal-search label{
+    display:inline;
+}
+
+.flex {
+    display:flex;
+    flex-flow: row wrap;
+    gap:1rem;
+    justify-content: flex-start;
+}
+.animal-search{
+    margin-bottom:4rem;
+    width:85%;
+}
+
+.animal-search button{
+    background-color:transparent;
+    border:none;
+    height:50px;
+}
+
  @media only screen and (max-width: 1700px) {
      .featured_grid {
          grid-template-columns: auto auto auto auto;
