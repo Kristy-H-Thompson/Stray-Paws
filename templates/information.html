@@ -1,0 +1,133 @@
+{% extends 'StrayPaws.html' %}
+{% block title %} {{ animal['name'] }} {% endblock %}
+{% block content %}
+<main>
+   <div class="featured_animals">
+      <div class="animal_info_grid">
+         <div class="animal">
+            <img alt="animal image" class="featured_img" src="{{ animal['coverphoto'] }}">
+         </div>
+         <div class="animal_list_info">
+            <h2>{{ animal['name'] }}</h2>
+            <div class="list_info"><b>Age:</b> {% if animal['age'] > 12 %} {{ (animal['age'] / 12)|round }} years
+               {% else %} {{ animal['age'] }} months {% endif %}
+            </div>
+            <div class="list_info"><b>Sex:</b> {{ animal['sex'] }} </div>
+            <div><b>Breed:</b> {{ breed|safe }}</div>
+            <div><b>Status:</b> {{ animal['status'] }}</div>
+            <br>
+            <div><b>Adoption Fee:</b> {{ adoptionfee }} </div>
+            <div><b>Rescue-id:</b> {{ animal['spr_id'] }}</div>
+         </div>
+      </div>
+   </div>
+   </div><br>
+   <div class="animal_flex">
+      <div>
+         <img class="pawprint_detail" alt="paw print" src="/images/sponsor.png">
+         <a title="Sponsor" href="{{ url_for('sponsorship')}}">
+         Sponsor This {{ animal['type'] }}
+         </a>
+      </div>
+      <div>
+         <img class="pawprint_detail" alt="paw print" src="/images/adopt.png">
+         <a title="Adoption Info" href="{{ url_for('adoption')}}">
+         Adoption Info
+         </a>
+      </div>
+      <div>
+         <img class="pawprint_detail" alt="paw print" src="/images/adoptapp-blue.png">
+         <a title="Adoption Form" href="https://www.shelterluv.com/matchme/adopt/SPRA-A-{{ animal['spr_id'] }}" target="_blank">
+         Adoption Form
+         </a>
+      </div>
+   </div>
+   <br><br>
+   <div class="animal_details">
+      <h3>Learn more about {{ animal['name'] }}</h3>
+      <div class="animal_description">
+         <p>{{ animal['description'] }}</p>
+      </div>
+      <br><br>
+      <div class="animal_details_grid">
+         <div>
+            <img class="pawprint_detail" alt="paw print" src="/images/blue-pawprint.png">
+            <b>Breed:</b><br>
+            <span>{{ animal['breed'] }}</span>
+         </div>
+         <div>
+            <img class="pawprint_detail" alt="paw print" src="/images/blue-pawprint.png">
+            <b>Color:</b><br>
+            <span>{{ animal['color'] }}</span>
+         </div>
+         <div>
+            <img class="pawprint_detail" alt="paw print" src="/images/blue-pawprint.png">
+            <b>Pattern:</b><br>
+            <span>{{ animal['pattern'] }}</span>
+         </div>
+         <div>
+            <img class="pawprint_detail" alt="paw print" src="/images/blue-pawprint.png">
+            <b>Weight:</b><br>
+            <span>{{ animal['current_weight'] }} lbs</span>
+         </div>
+         <div>
+            <img class="pawprint_detail" alt="paw print" src="/images/blue-pawprint.png">
+            <b>Size:</b><br>
+            <span>{{ animal['size'] }}</span>
+         </div>
+         <div>
+            <img class="pawprint_detail" alt="paw print" src="/images/blue-pawprint.png">
+            <b>Microchiped?:</b><br>
+            <span>{% if (animal['microchip'] == 1) %} Yes {% else %} No
+            {% endif %}</span>
+         </div>
+         <div>
+            <img class="pawprint_detail" alt="paw print" src="/images/blue-pawprint.png">
+            <b>Altered:</b><br>
+            <span>{{ animal['altered'] }}</span>
+         </div>
+      </div>
+   </div>
+   </div><br><br>
+   <div class="animal_details">
+      {% if attributes|length > 0 %}
+      <h3>I am... </h3>
+      {% endif %}
+      <div class="animal_details_grid">
+         {% for attribute in attributes %}
+         {% if attribute['publish'] == "Yes" and attribute['attribute_name'] != "Declawing" %}
+         <div>
+            <img class="pawprint_detail" alt="paw print" src="/images/blue-pawprint.png"><br>
+            <span>{{ attribute['attribute_name'] }}</span>
+         </div>
+         {% endif %}
+         {% endfor %}
+      </div>
+   </div>
+   </div><br><br>
+   <div class="featured_animals">
+      <h3>More pictures of {{ animal['name'] }}</h3>
+      <div class="gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>
+         {% for photo in photos %}
+         <div class="gallery-cell">
+            <img alt="animal image" class="slider_img" src="{{ photo['url'] }}">
+         </div>
+         {% endfor %}
+         {% for vid in videos %}
+         <div class="gallery-cell">
+            <iframe width="420" height="345" class="slider_image" src="{{ vid['url'] }}">
+            </iframe>
+         </div>
+         {% endfor %}
+      </div>
+      <br>
+      <div class="animal_details">
+         <h3> Share {{ animal['Name'] }} </h3>
+         <a title="Facebook" href="http://www.facebook.com/share.php?u=https://straypawsrescue.com{{ url_for('information', animal_id=animal['id']) }}"><img class="social_media" alt="Facebook link: Stray Paws" src="/images/facebook.png"></a>
+         <a title="Twitter" href="http://twitter.com/intent/tweet?text=I want to help {{ animal['name'] }} find a home! https://straypawsrescue.com{{ url_for('information', animal_id=animal['id']) }}" target="_top"><img class="social_media" alt="Twitter link: Stray Paws" src="/images/twitter.png"></a>
+         <a title="Tumblr" href="https://www.tumblr.com/share?posttype=photo&content={{ animal['coverphoto'] }}"><img class="social_media" alt="Tumblr link: Stray Paws" src="/images/tumblr.png"></a>
+      </div>
+      <br><br>
+   </div>
+</main>
+{% endblock %}
